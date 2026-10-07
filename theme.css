@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #806cff;
+  --color-primary-contrast: #ffffff;
+  --color-secondary: #45d6ff;
+  --color-bg: #080b17;
+  --color-surface: #101629;
+  --color-surface-raised: #151d33;
+  --color-text: #f5f7ff;
+  --color-muted: #a0abc5;
+  --color-line: rgba(174, 190, 255, 0.14);
+  --color-success: #55e6ae;
+  --color-warning: #ffc56f;
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --radius: 20px;
+}
