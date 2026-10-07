@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Overview | ALPHA IT</title>
+  <meta name="description" content="Admin dashboard interface preview for the ALPHA IT portal demo.">
+  <meta property="og:title" content="ALPHA IT Admin Preview">
+  <meta property="og:description" content="A dashboard preview for managing company operations.">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script defer src="/app.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Admin navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>ADMIN PREVIEW</small></span></a>
+      <div class="nav-links"><a href="/">Company site</a><a class="active" href="/admin">Overview</a><a href="/portal">Client portal</a></div>
+      <div class="nav-actions"><span class="eyebrow">Demo admin</span><a class="btn btn-ghost btn-small" href="/" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
+    </nav>
+  </header>
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-label">Administration</div>
+      <nav class="portal-menu" aria-label="Admin navigation"><a class="active" href="/admin"><span class="menu-glyph">⌂</span>Dashboard</a><a href="#clients"><span class="menu-glyph">◉</span>Manage Clients</a><a href="#projects"><span class="menu-glyph">▣</span>Manage Projects</a><a href="#services"><span class="menu-glyph">⌬</span>Manage Services</a><a href="#team"><span class="menu-glyph">♙</span>Manage Team</a><a href="#messages"><span class="menu-glyph">✉</span>Manage Messages</a><a href="#files"><span class="menu-glyph">⌑</span>Manage Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Manage Invoices</a><a href="#analytics"><span class="menu-glyph">▥</span>Analytics</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="/" data-logout><span class="menu-glyph">↪</span>Logout</a></nav>
+      <div class="sidebar-profile"><span class="mini-avatar">AD</span>
+        <div><strong>Administrator</strong><small>Preview access</small></div>
+      </div>
+    </aside>
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div style="display:flex;align-items:center;gap:13px"><button class="icon-btn mobile-sidebar-toggle" aria-label="Open admin navigation">☰</button>
+          <div>
+            <h1>Operations overview</h1>
+            <p>Your workspace at a glance · sample admin data</p>
+          </div>
+        </div>
+        <div class="portal-actions"><button class="icon-btn notification-trigger" aria-label="Open notifications" aria-expanded="false">♧<span class="badge"></span>
+            <div class="notification-popover glass">
+              <div class="panel-head">
+                <h3>Admin alerts</h3><button class="text-link" data-mark-read>Mark read</button>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item"><strong>Project updated</strong>
+                  <p>Client Portal Refresh moved into design review.</p>
+                </div>
+                <div class="notification-item"><strong>New message</strong>
+                  <p>Two client messages need a reply.</p>
+                </div>
+                <div class="notification-item"><strong>Invoice reminder</strong>
+                  <p>One sample invoice is marked for review.</p>
+                </div>
+              </div>
+            </div>
+          </button></div>
+      </div>
+      <div class="portal-grid">
+        <article class="metric-card glass"><span>Total projects</span><strong>18</strong><small>+3 this quarter</small></article>
+        <article class="metric-card glass"><span>Active clients</span><strong>25</strong><small>Across current work</small></article>
+        <article class="metric-card glass"><span>Revenue overview</span><strong>$42.8k</strong><small>Illustrative sample figure</small></article>
+        <article class="metric-card glass"><span>Traffic this month</span><strong>12.4k</strong><small>Sample page visits</small></article>
+      </div>
+      <div class="portal-content-grid" id="analytics">
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Revenue overview</h3><span class="eyebrow">Sample data · 6 months</span>
+          </div>
+          <div id="revenue-chart" aria-label="Sample revenue chart"></div>
+        </section>
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Project status</h3><span class="eyebrow">Sample data</span>
+          </div>
+          <div id="status-chart" aria-label="Sample project status chart"></div>
+        </section>
+        <section class="panel glass" id="projects">
+          <div class="panel-head">
+            <h3>Project portfolio</h3><a href="/portal/projects">Open project view →</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>PROJECT</th>
+                  <th>CLIENT</th>
+                  <th>STATUS</th>
+                  <th>PROGRESS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Client Portal Refresh</td>
+                  <td>Client workspace</td>
+                  <td><span class="status">On track</span></td>
+                  <td>72%</td>
+                </tr>
+                <tr>
+                  <td>Commerce Experience</td>
+                  <td>Sample client</td>
+                  <td><span class="status">In progress</span></td>
+                  <td>48%</td>
+                </tr>
+                <tr>
+                  <td>Insights Dashboard</td>
+                  <td>Sample client</td>
+                  <td><span class="status" style="color:#ffce83;background:rgba(255,197,111,.1)">Planning</span></td>
+                  <td>24%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel glass" id="clients">
+          <div class="panel-head">
+            <h3>Clients</h3><a href="#clients">Manage →</a>
+          </div>
+          <div class="activity">
+            <div class="activity-item"><span class="mini-avatar">AC</span>
+              <div><strong>Sample client workspace</strong><span>3 active projects · Demo record</span></div>
+            </div>
+            <div class="activity-item"><span class="mini-avatar">ST</span>
+              <div><strong>Sample startup team</strong><span>1 active project · Demo record</span></div>
+            </div>
+            <div class="activity-item"><span class="mini-avatar">OR</span>
+              <div><strong>Sample organization</strong><span>2 active projects · Demo record</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass" id="messages">
+          <div class="panel-head">
+            <h3>Recent messages</h3><a href="#messages">Open inbox →</a>
+          </div>
+          <div class="notification-list">
+            <div class="notification-item"><strong>Client workspace · Feedback</strong>
+              <p>Could we review the mobile prototype this week?</p>
+            </div>
+            <div class="notification-item"><strong>Sample startup · Scope</strong>
+              <p>Shared a few notes for the upcoming sprint.</p>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Workspace shortcuts</h3><span class="eyebrow">Preview only</span>
+          </div>
+          <div class="activity">
+            <div class="activity-item" id="services"><span class="activity-icon">⌬</span>
+              <div><strong>Services</strong><span>6 public service entries · Display-only</span></div>
+            </div>
+            <div class="activity-item" id="team"><span class="activity-icon">♙</span>
+              <div><strong>Team</strong><span>5 example profile cards · Display-only</span></div>
+            </div>
+            <div class="activity-item" id="files"><span class="activity-icon">⌑</span>
+              <div><strong>Files</strong><span>Storage integration not connected</span></div>
+            </div>
+            <div class="activity-item" id="invoices"><span class="activity-icon">＄</span>
+              <div><strong>Invoices</strong><span>Billing integration not connected</span></div>
+            </div>
+            <div class="activity-item" id="settings"><span class="activity-icon">⚙</span>
+              <div><strong>Settings</strong><span>Admin settings are not persisted</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <p class="form-note" style="margin-top:20px">Admin preview is a front-end demo using local browser role selection and sample data. It is not secure authentication and must not be used to manage real client, financial, or private records. Production admin access requires server-side authorization.</p>
+    </main>
+  </div>
+</body>
+
+</html>

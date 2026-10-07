@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account | ALPHA IT</title>
+  <meta name="description" content="Create a demo ALPHA IT client workspace account.">
+  <meta property="og:title" content="Create an ALPHA IT account">
+  <meta property="og:description" content="Start a workspace with ALPHA IT.">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="/app.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>BUILD THE NEXT</small></span></a>
+      <div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/projects">Projects</a><a href="/solutions">Solutions</a><a href="/team">Team</a><a href="/contact">Contact</a></div>
+      <div class="nav-actions"><a class="btn btn-ghost btn-small" href="/login">Login</a><a class="btn btn-primary btn-small" href="/contact">Get Started ↗</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
+    </nav>
+  </header>
+  <main class="auth-wrap">
+    <form class="auth-card glass" id="signup-form"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>YOUR WORKSPACE</small></span></a>
+      <h1>Create your <span class="gradient-text">account.</span></h1>
+      <p>Set up a client workspace to keep project conversations together.</p>
+      <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required placeholder="Your name"></div>
+      <div class="field"><label for="signup-email">Email address</label><input id="signup-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" minlength="8" autocomplete="new-password" required placeholder="At least 8 characters"></div>
+      <div class="field"><label for="confirm-password">Confirm password</label><input id="confirm-password" name="confirm-password" type="password" minlength="8" autocomplete="new-password" required placeholder="Enter it again"></div><button class="btn btn-primary" type="submit" style="width:100%;margin-top:5px">Create account <span>→</span></button>
+      <div class="role-note" style="margin-top:14px">Demo only: this form validates locally and does not create a server account or store your password.</div>
+      <div class="auth-switch">Already have a workspace? <a href="/login">Login</a></div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top:0"><span>© 2025 ALPHA IT</span><a href="/">Return to home</a></div>
+    </div>
+  </footer>
+</body>
+
+</html>

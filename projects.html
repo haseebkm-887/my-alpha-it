@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Client Portal | ALPHA IT</title>
+  <meta name="description" content="ALPHA IT client workspace demo for project progress, messages, files, invoices, and support.">
+  <meta property="og:title" content="ALPHA IT Client Portal">
+  <meta property="og:description" content="A workspace for project updates and collaboration.">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="/app.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>CLIENT WORKSPACE</small></span></a>
+      <div class="nav-links"><a href="/">Company site</a><a class="active" href="/portal">Dashboard</a><a href="/portal/projects">My projects</a><a href="/contact">Support</a></div>
+      <div class="nav-actions">
+        <div style="position:relative"><button class="icon-btn notification-trigger" aria-label="Open notifications" aria-expanded="false">♧<span class="badge"></span></button>
+          <div class="notification-popover glass">
+            <div class="panel-head">
+              <h3>Notifications</h3><button class="text-link" data-mark-read>Mark read</button>
+            </div>
+            <div class="notification-list">
+              <div class="notification-item"><strong>Project milestone reached</strong>
+                <p>Design review is ready for your feedback · 2h</p>
+              </div>
+              <div class="notification-item"><strong>New message</strong>
+                <p>Your project team shared an update · 1d</p>
+              </div>
+              <div class="notification-item"><strong>Invoice available</strong>
+                <p>A new invoice is ready to review · 3d</p>
+              </div>
+            </div>
+          </div>
+        </div><a class="btn btn-ghost btn-small" href="/" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <div class="portal-label">Workspace</div>
+      <nav class="portal-menu" aria-label="Client portal navigation"><a class="active" href="/portal"><span class="menu-glyph">⌂</span>Dashboard</a><a href="/portal/projects"><span class="menu-glyph">▣</span>My Projects</a><a href="#messages"><span class="menu-glyph">✉</span>Messages <span class="status" style="margin-left:auto">2</span></a><a href="#files"><span class="menu-glyph">⌑</span>Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Invoices</a><a href="/contact"><span class="menu-glyph">⊙</span>Support</a>
+        <div class="portal-label" style="padding-top:20px">Account</div><a href="#profile"><span class="menu-glyph">◉</span>Profile</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="/" data-logout><span class="menu-glyph">↪</span>Logout</a>
+      </nav>
+      <div class="sidebar-profile"><span class="mini-avatar" data-user-name>CL</span>
+        <div><strong data-user-name>Client</strong><small>Client workspace</small></div>
+      </div>
+    </aside>
+    <main class="portal-main">
+      <div class="portal-topbar">
+        <div style="display:flex;align-items:center;gap:13px"><button class="icon-btn mobile-sidebar-toggle" aria-label="Open portal navigation">☰</button>
+          <div>
+            <h1>Good to see you, <span data-user-name>Client</span>.</h1>
+            <p>Here’s what’s happening with your work today.</p>
+          </div>
+        </div>
+        <div class="portal-actions"><span class="eyebrow"><span class="dot"></span> Workspace active</span></div>
+      </div>
+      <div class="portal-grid">
+        <article class="metric-card glass"><span>Active projects</span><strong>03</strong><small>2 moving this week</small></article>
+        <article class="metric-card glass"><span>Average progress</span><strong>68%</strong><small>↑ 12% this month</small></article>
+        <article class="metric-card glass"><span>Unread messages</span><strong>02</strong><small>Latest update · 2h ago</small></article>
+        <article class="metric-card glass"><span>Open invoices</span><strong>01</strong><small>Due date shown in invoice</small></article>
+      </div>
+      <div class="portal-content-grid">
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Active projects</h3><a href="/portal/projects">View all →</a>
+          </div>
+          <div class="project-row">
+            <div class="project-row-top">
+              <div><strong>Client Portal Refresh</strong><small>Design system · Updated today</small></div><span class="status">On track</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px">
+              <div class="progress-track" style="flex:1;margin:0 12px 0 0">
+                <div class="progress-fill" style="width:72%"></div>
+              </div><span class="progress-percent">72%</span>
+            </div>
+          </div>
+          <div class="project-row">
+            <div class="project-row-top">
+              <div><strong>Commerce Experience</strong><small>Web development · Updated yesterday</small></div><span class="status">In progress</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px">
+              <div class="progress-track" style="flex:1;margin:0 12px 0 0">
+                <div class="progress-fill" style="width:48%"></div>
+              </div><span class="progress-percent">48%</span>
+            </div>
+          </div>
+          <div class="project-row">
+            <div class="project-row-top">
+              <div><strong>Insights Dashboard</strong><small>Planning · Updated 3 days ago</small></div><span class="status" style="color:#ffce83;background:rgba(255,197,111,.1)">Planning</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:12px">
+              <div class="progress-track" style="flex:1;margin:0 12px 0 0">
+                <div class="progress-fill" style="width:24%"></div>
+              </div><span class="progress-percent">24%</span>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Recent updates</h3><a href="#messages">Messages →</a>
+          </div>
+          <div class="activity">
+            <div class="activity-item"><span class="activity-icon">✓</span>
+              <div><strong>Design milestone completed</strong><span>Client Portal Refresh · 2 hours ago</span></div>
+            </div>
+            <div class="activity-item"><span class="activity-icon">✉</span>
+              <div><strong>New team message</strong><span>Commerce Experience · Yesterday</span></div>
+            </div>
+            <div class="activity-item"><span class="activity-icon">⌑</span>
+              <div><strong>Project brief uploaded</strong><span>Insights Dashboard · 3 days ago</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass" id="messages">
+          <div class="panel-head">
+            <h3>Messages</h3><a href="/contact">Contact team →</a>
+          </div>
+          <div class="notification-list">
+            <div class="notification-item"><strong>Project team</strong>
+              <p>We’ve completed the first design review. Your feedback will help us prepare the next iteration.</p>
+            </div>
+            <div class="notification-item"><strong>ALPHA support</strong>
+              <p>Welcome to your workspace. Use this panel to keep project conversations organized.</p>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass">
+          <div class="panel-head">
+            <h3>Next up</h3><span class="eyebrow">This week</span>
+          </div>
+          <div class="activity">
+            <div class="activity-item"><span class="activity-icon">◈</span>
+              <div><strong>Review design prototype</strong><span>Client Portal Refresh · Thursday</span></div>
+            </div>
+            <div class="activity-item"><span class="activity-icon">↗</span>
+              <div><strong>Confirm launch priorities</strong><span>Commerce Experience · Friday</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="panel glass" id="files">
+          <div class="panel-head">
+            <h3>Recent files</h3><a href="#files">Browse files →</a>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>FILE</th>
+                  <th>PROJECT</th>
+                  <th>UPDATED</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Portal-design-review.pdf</td>
+                  <td>Client Portal Refresh</td>
+                  <td>Today</td>
+                </tr>
+                <tr>
+                  <td>Project-brief-v2.docx</td>
+                  <td>Insights Dashboard</td>
+                  <td>3 days ago</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel glass" id="invoices">
+          <div class="panel-head">
+            <h3>Invoices</h3><a href="#invoices">View all →</a>
+          </div>
+          <div class="project-row">
+            <div class="project-row-top">
+              <div><strong>INV-2025-004 · Project milestone</strong><small>Amount and payment details available in your signed agreement.</small></div><span class="status" style="color:#ffce83;background:rgba(255,197,111,.1)">Review</span>
+            </div>
+          </div>
+        </section>
+        <div class="panel glass" id="profile">
+          <div class="panel-head">
+            <h3>Profile & settings</h3><a href="#settings">Manage →</a>
+          </div>
+          <p id="settings" style="font-size:11px">Demo workspace preferences are shown for display. Profile changes are not persisted to an account service.</p>
+        </div>
+      </div>
+      <p class="form-note" style="margin-top:20px">Sample workspace data for demonstration only. No project, message, file, or invoice data is connected to a live service.</p>
+    </main>
+  </div>
+</body>
+
+</html>
