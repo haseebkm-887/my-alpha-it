@@ -8,24 +8,24 @@
   <meta name="description" content="Admin dashboard interface preview for the ALPHA IT portal demo.">
   <meta property="og:title" content="ALPHA IT Admin Preview">
   <meta property="og:description" content="A dashboard preview for managing company operations.">
-  <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <script defer src="/app.js"></script>
+  <script defer src="app.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Admin navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>ADMIN PREVIEW</small></span></a>
-      <div class="nav-links"><a href="/">Company site</a><a class="active" href="/admin">Overview</a><a href="/portal">Client portal</a></div>
-      <div class="nav-actions"><span class="eyebrow">Demo admin</span><a class="btn btn-ghost btn-small" href="/" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
+    <nav class="navbar container" aria-label="Admin navigation"><a class="brand" href="index.html"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>ADMIN PREVIEW</small></span></a>
+      <div class="nav-links"><a href="index.html">Company site</a><a class="active" href="admin.html">Overview</a><a href="projects.html">Client portal</a></div>
+      <div class="nav-actions"><span class="eyebrow">Demo admin</span><a class="btn btn-ghost btn-small" href="index.html" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
     </nav>
   </header>
   <div class="portal-shell">
     <aside class="portal-sidebar">
       <div class="portal-label">Administration</div>
-      <nav class="portal-menu" aria-label="Admin navigation"><a class="active" href="/admin"><span class="menu-glyph">⌂</span>Dashboard</a><a href="#clients"><span class="menu-glyph">◉</span>Manage Clients</a><a href="#projects"><span class="menu-glyph">▣</span>Manage Projects</a><a href="#services"><span class="menu-glyph">⌬</span>Manage Services</a><a href="#team"><span class="menu-glyph">♙</span>Manage Team</a><a href="#messages"><span class="menu-glyph">✉</span>Manage Messages</a><a href="#files"><span class="menu-glyph">⌑</span>Manage Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Manage Invoices</a><a href="#analytics"><span class="menu-glyph">▥</span>Analytics</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="/" data-logout><span class="menu-glyph">↪</span>Logout</a></nav>
+      <nav class="portal-menu" aria-label="Admin navigation"><a class="active" href="admin.html"><span class="menu-glyph">⌂</span>Dashboard</a><a href="#clients"><span class="menu-glyph">◉</span>Manage Clients</a><a href="#projects"><span class="menu-glyph">▣</span>Manage Projects</a><a href="#services"><span class="menu-glyph">⌬</span>Manage Services</a><a href="#team"><span class="menu-glyph">♙</span>Manage Team</a><a href="#messages"><span class="menu-glyph">✉</span>Manage Messages</a><a href="#files"><span class="menu-glyph">⌑</span>Manage Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Manage Invoices</a><a href="#analytics"><span class="menu-glyph">▥</span>Analytics</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="index.html" data-logout><span class="menu-glyph">↪</span>Logout</a></nav>
       <div class="sidebar-profile"><span class="mini-avatar">AD</span>
         <div><strong>Administrator</strong><small>Preview access</small></div>
       </div>
@@ -78,7 +78,7 @@
         </section>
         <section class="panel glass" id="projects">
           <div class="panel-head">
-            <h3>Project portfolio</h3><a href="/portal/projects">Open project view →</a>
+            <h3>Project portfolio</h3><a href="projects.html">Open project view →</a>
           </div>
           <div class="table-wrap">
             <table>

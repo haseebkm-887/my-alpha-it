@@ -8,21 +8,21 @@
   <meta name="description" content="Sign in to the ALPHA IT client portal demo.">
   <meta property="og:title" content="ALPHA IT Portal Login">
   <meta property="og:description" content="Sign in to view your portal experience.">
-  <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="/app.js"></script>
+  <script defer src="app.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>BUILD THE NEXT</small></span></a>
-      <div class="nav-links"><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/projects">Projects</a><a href="/solutions">Solutions</a><a href="/team">Team</a><a href="/contact">Contact</a></div>
-      <div class="nav-actions"><a class="btn btn-ghost btn-small" href="/portal">Client portal</a><a class="btn btn-primary btn-small" href="/signup">Create account</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
+    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>BUILD THE NEXT</small></span></a>
+      <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="solution.html">Solutions</a><a href="team.html">Team</a><a href="contact.html">Contact</a></div>
+      <div class="nav-actions"><a class="btn btn-ghost btn-small" href="projects.html">Client portal</a><a class="btn btn-primary btn-small" href="signup.html">Create account</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
     </nav>
   </header>
   <main class="auth-wrap">
-    <form class="auth-card glass" id="login-form"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>SECURE WORKSPACE</small></span></a>
+    <form class="auth-card glass" id="login-form"><a class="brand" href="index.html"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>SECURE WORKSPACE</small></span></a>
       <h1>Welcome <span class="gradient-text">back.</span></h1>
       <p>Sign in to your ALPHA IT workspace.</p>
       <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="username" required placeholder="you@company.com"></div>
@@ -31,14 +31,14 @@
           <option value="client">Client workspace</option>
           <option value="admin">Admin preview</option>
         </select></div>
-      <div class="auth-options"><label class="checkline"><input type="checkbox" name="remember"> Remember me</label><a href="/forgot-password">Forgot password?</a></div><button class="btn btn-primary" type="submit" style="width:100%">Login <span>→</span></button>
+      <div class="auth-options"><label class="checkline"><input type="checkbox" name="remember"> Remember me</label><a href="forget-password.html">Forgot password?</a></div><button class="btn btn-primary" type="submit" style="width:100%">Login <span>→</span></button>
       <div class="role-note" style="margin-top:15px">Demo only: sign-in does not verify credentials or contact a server. Role selection is not secure authentication. Production requires server-side identity and access controls.</div>
-      <div class="auth-switch">New to ALPHA IT? <a href="/signup">Create an account</a></div>
+      <div class="auth-switch">New to ALPHA IT? <a href="signup.html">Create an account</a></div>
     </form>
   </main>
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom" style="margin-top:0"><span>© 2025 ALPHA IT</span><a href="/">Return to home</a></div>
+      <div class="footer-bottom" style="margin-top:0"><span>© 2025 ALPHA IT</span><a href="index.html">Return to home</a></div>
     </div>
   </footer>
 </body>

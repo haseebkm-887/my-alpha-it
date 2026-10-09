@@ -8,16 +8,16 @@
   <meta name="description" content="ALPHA IT client workspace demo for project progress, messages, files, invoices, and support.">
   <meta property="og:title" content="ALPHA IT Client Portal">
   <meta property="og:description" content="A workspace for project updates and collaboration.">
-  <link rel="stylesheet" href="/theme.css">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="/app.js"></script>
+  <script defer src="app.js"></script>
 </head>
 
 <body>
   <header class="site-header">
-    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="/"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>CLIENT WORKSPACE</small></span></a>
-      <div class="nav-links"><a href="/">Company site</a><a class="active" href="/portal">Dashboard</a><a href="/portal/projects">My projects</a><a href="/contact">Support</a></div>
+    <nav class="navbar container" aria-label="Main navigation"><a class="brand" href="index.html"><span class="brand-mark">α</span><span class="brand-name">ALPHA IT<small>CLIENT WORKSPACE</small></span></a>
+      <div class="nav-links"><a href="index.html">Company site</a><a class="active" href="projects.html">Dashboard</a><a href="projects.html">My projects</a><a href="contact.html">Support</a></div>
       <div class="nav-actions">
         <div style="position:relative"><button class="icon-btn notification-trigger" aria-label="Open notifications" aria-expanded="false">♧<span class="badge"></span></button>
           <div class="notification-popover glass">
@@ -36,15 +36,15 @@
               </div>
             </div>
           </div>
-        </div><a class="btn btn-ghost btn-small" href="/" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div><a class="btn btn-ghost btn-small" href="index.html" data-logout>Logout</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </nav>
   </header>
   <div class="portal-shell">
     <aside class="portal-sidebar">
       <div class="portal-label">Workspace</div>
-      <nav class="portal-menu" aria-label="Client portal navigation"><a class="active" href="/portal"><span class="menu-glyph">⌂</span>Dashboard</a><a href="/portal/projects"><span class="menu-glyph">▣</span>My Projects</a><a href="#messages"><span class="menu-glyph">✉</span>Messages <span class="status" style="margin-left:auto">2</span></a><a href="#files"><span class="menu-glyph">⌑</span>Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Invoices</a><a href="/contact"><span class="menu-glyph">⊙</span>Support</a>
-        <div class="portal-label" style="padding-top:20px">Account</div><a href="#profile"><span class="menu-glyph">◉</span>Profile</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="/" data-logout><span class="menu-glyph">↪</span>Logout</a>
+      <nav class="portal-menu" aria-label="Client portal navigation"><a class="active" href="projects.html"><span class="menu-glyph">⌂</span>Dashboard</a><a href="projects.html"><span class="menu-glyph">▣</span>My Projects</a><a href="#messages"><span class="menu-glyph">✉</span>Messages <span class="status" style="margin-left:auto">2</span></a><a href="#files"><span class="menu-glyph">⌑</span>Files</a><a href="#invoices"><span class="menu-glyph">＄</span>Invoices</a><a href="contact.html"><span class="menu-glyph">⊙</span>Support</a>
+        <div class="portal-label" style="padding-top:20px">Account</div><a href="#profile"><span class="menu-glyph">◉</span>Profile</a><a href="#settings"><span class="menu-glyph">⚙</span>Settings</a><a href="index.html" data-logout><span class="menu-glyph">↪</span>Logout</a>
       </nav>
       <div class="sidebar-profile"><span class="mini-avatar" data-user-name>CL</span>
         <div><strong data-user-name>Client</strong><small>Client workspace</small></div>
@@ -69,7 +69,7 @@
       <div class="portal-content-grid">
         <section class="panel glass">
           <div class="panel-head">
-            <h3>Active projects</h3><a href="/portal/projects">View all →</a>
+            <h3>Active projects</h3><a href="projects.html">View all →</a>
           </div>
           <div class="project-row">
             <div class="project-row-top">
@@ -120,7 +120,7 @@
         </section>
         <section class="panel glass" id="messages">
           <div class="panel-head">
-            <h3>Messages</h3><a href="/contact">Contact team →</a>
+            <h3>Messages</h3><a href="contact.html">Contact team →</a>
           </div>
           <div class="notification-list">
             <div class="notification-item"><strong>Project team</strong>

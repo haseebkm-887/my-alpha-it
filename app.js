@@ -2,6 +2,17 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+  const pageName = window.location.pathname.split('/').pop() || 'index.html';
+  const publicPages = new Set(['index.html', 'login.html', 'signup.html', 'forget-password.html']);
+  const role = localStorage.getItem('alphaDemoRole');
+  if (!publicPages.has(pageName) && !['client', 'admin'].includes(role)) {
+    const returnTo = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    const loginUrl = new URL('login.html', window.location.href);
+    loginUrl.searchParams.set('next', returnTo);
+    window.location.replace(loginUrl);
+    return;
+  }
+
   const flash = (message, good = true) => {
     let notice = $('.notice');
     if (!notice) {
@@ -137,9 +148,9 @@
   document.addEventListener('click', event => {
     if (notificationPanel && !notificationPanel.contains(event.target) && !notificationButton?.contains(event.target)) notificationPanel.classList.remove('open');
   });
-  $('[data-mark-read]').forEach(button => button.addEventListener('click', event => {
+  $$('[data-mark-read]').forEach(button => button.addEventListener('click', event => {
     event.stopPropagation();
-    $('.badge').forEach(badge => badge.remove());
+    $$('[data-mark-read] .badge, .badge').forEach(badge => badge.remove());
     flash('You’re all caught up.');
     notificationPanel?.classList.remove('open');
   }));
@@ -154,7 +165,13 @@
     localStorage.setItem('alphaDemoRole', role);
     localStorage.setItem('alphaDemoName', String(data.get('email')).split('@')[0] || 'Member');
     flash(`Demo ${role} session started. No credentials were sent to a server.`);
-    window.setTimeout(() => window.location.assign(role === 'admin' ? '/admin' : '/portal'), 650);
+    const requestedPage = new URLSearchParams(window.location.search).get('next');
+    const destination = requestedPage ? new URL(requestedPage, window.location.href) : null;
+    const knownPages = new Set(['about.html', 'services.html', 'projects.html', 'solution.html', 'team.html', 'contact.html', 'admin.html', 'prject.html']);
+    const nextPage = destination?.pathname.split('/').pop();
+    const canReturnToRequestedPage = destination?.origin === window.location.origin && knownPages.has(nextPage) && (nextPage !== 'admin.html' || role === 'admin');
+    const defaultPage = role === 'admin' ? 'admin.html' : 'projects.html';
+    window.setTimeout(() => window.location.assign(canReturnToRequestedPage ? destination.href : defaultPage), 650);
   });
 
   const signupForm = $('#signup-form');
@@ -165,7 +182,7 @@
     const confirm = $('#confirm-password', signupForm)?.value;
     if (pass !== confirm) return flash('Your passwords do not match.', false);
     flash('Demo account details validated. Connect an identity provider to create a real account.');
-    window.setTimeout(() => window.location.assign('/login'), 1300);
+    window.setTimeout(() => window.location.assign('login.html'), 1300);
   });
 
   const requestForms = $$('[data-request-form]');
@@ -195,15 +212,13 @@
     event.preventDefault();
     localStorage.removeItem('alphaDemoRole');
     localStorage.removeItem('alphaDemoName');
-    window.location.assign('/');
+    window.location.assign('index.html');
   }));
 
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   const currentRole = localStorage.getItem('alphaDemoRole');
-  if (currentPath === '/admin' && currentRole !== 'admin') {
-    window.location.replace('/login?role=admin');
-  } else if ((currentPath === '/portal' || currentPath === '/portal/projects') && !['client', 'admin'].includes(currentRole)) {
-    window.location.replace('/login?role=client');
+  if (currentPath.endsWith('admin.html') && currentRole !== 'admin') {
+    window.location.replace('projects.html');
   }
   const userName = localStorage.getItem('alphaDemoName');
   $$('[data-user-name]').forEach(item => {
@@ -212,7 +227,7 @@
   const roleSelect = $('#role-select');
   if (roleSelect && new URLSearchParams(window.location.search).get('role') === 'admin') roleSelect.value = 'admin';
 
-  $('[data-toggle-password]').forEach(button => button.addEventListener('click', () => {
+  $$('[data-toggle-password]').forEach(button => button.addEventListener('click', () => {
     const field = $(button.dataset.togglePassword);
     if (!field) return;
     field.type = field.type === 'password' ? 'text' : 'password';
